@@ -32,14 +32,16 @@ curl -X POST http://localhost:8080/process \
 
 # System health monitoring
 curl http://localhost:8080/status
- Architecture
+```
+Architecture
 text
 User Request → Flask API → Router Agent → MCP Servers → AI Processing
      ↓              ↓             ↓           ↓           ↓
   Web UI        Intent        BigQuery    RAG Agent   Structured
               Analysis        GCS Ops    Document     JSON Response
                                             Intelligence
- Tech Stack
+Tech Stack
+
 Component	Technology	Purpose
 Backend	Python, Flask	REST API & web interface
 MCP Servers	Custom BigQuery & GCS	Service integration layer
@@ -47,7 +49,9 @@ AI Agents	Router & RAG	Intelligent routing & document understanding
 Cloud	Google Cloud Platform	Infrastructure & services
 Data	BigQuery, Cloud Storage	Enterprise data management
 Deployment	Docker, Cloud Run	Containerized deployment
- Project Structure
+
+
+Project Structure
 text
 Enterprise-RAG-Hub/
 ├── mcp_servers/          # MCP Protocol Servers
@@ -64,8 +68,9 @@ Enterprise-RAG-Hub/
 ├── main.py               # Main Flask application
 ├── requirements.txt      # Python dependencies
 └── README.md            # Project documentation
- Quick Start
-bash
+
+Quick Start
+```bash
 # Clone the repository
 git clone https://github.com/saicharanreddychandupatla/Enterprise-RAG-Workflow-Automation-Hub
 cd Enterprise-RAG-Workflow-Automation-Hub
@@ -92,7 +97,8 @@ curl http://localhost:8080/status
 
 # Run complete demo
 curl http://localhost:8080/api/demo
- API Endpoints
+```
+API Endpoints
 GET / - Web interface dashboard
 
 POST /process - Process natural language queries
@@ -101,7 +107,7 @@ GET /status - System health monitoring
 
 GET /api/demo - Run complete demonstration
 
- Use Cases
+Use Cases
 Enterprise Document Analysis: Process contracts, reports, policies
 
 Data Analytics & Reporting: Query data warehouses & generate insights
@@ -110,19 +116,21 @@ Workflow Automation: Multi-step business process automation
 
 Intelligent Q&A: Natural language queries with document context
 
- Deployment
+Deployment
 Local Development
 bash
 python main.py
 Docker
-bash
+
+```bash
 docker build -t enterprise-rag-hub .
 docker run -p 8080:8080 enterprise-rag-hub
 GCP Cloud Run
-bash
 chmod +x deployment/deploy.sh
 ./deployment/deploy.sh
- Performance Metrics
+```
+Performance Metrics
+
 Processes complex multi-step workflows in seconds
 
 Reduces manual data processing time by 70%
@@ -131,7 +139,7 @@ Handles document analysis and data queries simultaneously
 
 Ready for production deployment on GCP Cloud Run
 
- Future Enhancements
+Future Enhancements
 Additional MCP servers (Gmail, Slack, Jira)
 
 Advanced RAG with vector databases
@@ -142,5 +150,5 @@ Enhanced security and authentication
 
 Kubernetes deployment configuration
 
- Contributing
+Contributing
 This project demonstrates enterprise AI architecture patterns. Contributions and adaptations are welcome for learning and development purposes.
