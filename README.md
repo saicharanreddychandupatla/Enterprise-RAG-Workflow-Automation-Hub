@@ -1,78 +1,76 @@
+Enterprise RAG & Workflow Automation Hub
+AI + MCP + GCP + Workflow Orchestration
 
-# Enterprise RAG & Workflow Automation Hub
+A production-grade enterprise AI system integrating Google Cloud, BigQuery, Cloud Storage, intelligent AI Agents, and MCP servers for workflow automation, document intelligence, and natural-language enterprise reasoning.
 
-![GCP](https://img.shields.io/badge/Google_Cloud-Enterprise--Ready-blue)
-![Python](https://img.shields.io/badge/Python-3.9%2B-green) 
-![AI](https://img.shields.io/badge/AI-Multi--Agent_Systems-orange)
-![MCP](https://img.shields.io/badge/Protocol-MCP_(Model_Context_Protocol)-purple)
+🔥 System Status (Verified)
 
-A production-grade AI system that integrates BigQuery, Google Cloud Storage, and intelligent agents using MCP servers. Built for enterprise workflow automation and document intelligence.
+✔ Backend API running on GCP Cloud Shell
+✔ MCP Servers active (BigQuery + GCS)
+✔ Router Agent performing intent detection
+✔ RAG Agent performing document Q&A
+✔ Workflow automation functioning end-to-end
+✔ Ready for Cloud Run deployment
 
-##  Project Status & Demo
-
-###  System Status: Fully Operational
-- **Backend API**: Running successfully on GCP Cloud Shell
-- **MCP Servers**: BigQuery & GCS integration active  
-- **AI Agents**: Router and RAG agents processing requests
-- **Workflow Automation**: Multi-step processes executing correctly
-
-###  Verified Working Features
-```bash
+🎥 Demo Commands
 # Create sample enterprise data
 curl -X POST http://localhost:8080/process \
   -d "query=Create sample data for demonstration"
 
-# Analyze claims data and generate reports
+# Analyze claims data and generate summary reports
 curl -X POST http://localhost:8080/process \
   -d "query=Analyze claims data and generate report"
 
-# Document management and RAG queries
+# RAG-based document operations
 curl -X POST http://localhost:8080/process \
   -d "query=Show me what documents are available"
 
-# System health monitoring
+# System health check
 curl http://localhost:8080/status
-```
-Architecture
-text
-```bash
-User Request → Flask API → Router Agent → MCP Servers → AI Processing
-     ↓              ↓             ↓           ↓           ↓
-  Web UI        Intent        BigQuery    RAG Agent   Structured
-              Analysis        GCS Ops    Document     JSON Response
-                                            Intelligence
-```
-Tech Stack
 
-Component	Technology	Purpose
-Backend	Python, Flask	REST API & web interface
-MCP Servers	Custom BigQuery & GCS	Service integration layer
-AI Agents	Router & RAG	Intelligent routing & document understanding
-Cloud	Google Cloud Platform	Infrastructure & services
-Data	BigQuery, Cloud Storage	Enterprise data management
-Deployment	Docker, Cloud Run	Containerized deployment
+🧱 System Architecture
+User Request
+     ↓
+ Flask API
+     ↓
+ Router Agent (Intent Classifier)
+     ↓
+ MCP Servers (BigQuery & GCS Ops)
+     ↓
+ RAG Agent (Document Intelligence)
+     ↓
+Structured JSON Response
 
-
-Project Structure
-text
+🛠️ Tech Stack
+Layer	Technology	Purpose
+Backend API	Python, Flask	REST interface
+AI Agents	Router Agent, RAG Agent	Intent routing & document intelligence
+MCP Servers	Custom BigQuery & GCS MCP servers	Unified enterprise data operations
+Cloud	Google Cloud Platform	Hosting & data infrastructure
+Data Layer	BigQuery, Cloud Storage	Documents & enterprise datasets
+Deployment	Docker, Cloud Run	Scalable containerized execution
+📁 Project Structure
 Enterprise-RAG-Hub/
-├── mcp_servers/          # MCP Protocol Servers
-│   ├── bigquery_server.py    # BigQuery operations
-│   └── gcs_server.py         # Cloud Storage operations
-├── agents/               # AI Agent System  
-│   ├── router_agent.py       # Intent recognition & routing
-│   └── rag_agent.py          # Document intelligence & Q&A
-├── configs/              # Configuration
-│   └── gcp_config.py         # GCP project settings
-├── deployment/           # Deployment scripts
-│   ├── deploy.sh            # Cloud Run deployment
-│   └── Dockerfile           # Container configuration
-├── main.py               # Main Flask application
-├── requirements.txt      # Python dependencies
-└── README.md            # Project documentation
+├── mcp_servers/
+│   ├── bigquery_server.py
+│   └── gcs_server.py
+│
+├── agents/
+│   ├── router_agent.py
+│   └── rag_agent.py
+│
+├── configs/
+│   └── gcp_config.py
+│
+├── deployment/
+│   ├── deploy.sh
+│   └── Dockerfile
+│
+├── main.py
+├── requirements.txt
+└── README.md
 
-Quick Start
-```bash
+⚡ Quick Start (Local Development)
 # Clone the repository
 git clone https://github.com/saicharanreddychandupatla/Enterprise-RAG-Workflow-Automation-Hub
 cd Enterprise-RAG-Workflow-Automation-Hub
@@ -80,77 +78,81 @@ cd Enterprise-RAG-Workflow-Automation-Hub
 # Install dependencies
 pip install -r requirements.txt
 
-# Start the server
+# Start the service
 python main.py
 
-# Access the system at: http://localhost:8080
- Example Usage
-bash
-# Create sample enterprise data
+# Access API at:
+# http://localhost:8080
+
+🧪 Example Usage
+# Create sample data
 curl -X POST http://localhost:8080/process \
   -d "query=Create sample data for demonstration"
 
-# Analyze claims data and generate report
+# Analyze claims data
 curl -X POST http://localhost:8080/process \
   -d "query=Analyze claims data and generate report"
 
-# Check system status
+# Check system health
 curl http://localhost:8080/status
 
-# Run complete demo
+# Run complete demo workflow
 curl http://localhost:8080/api/demo
-```
-API Endpoints
-GET / - Web interface dashboard
 
-POST /process - Process natural language queries
+🔌 API Endpoints
+Method	Endpoint	Description
+GET	/	UI dashboard
+POST	/process	Process natural language queries
+GET	/status	System health check
+GET	/api/demo	Full demonstration workflow
+🏢 Enterprise Use Cases
+✔ Document Intelligence
 
-GET /status - System health monitoring
+Contracts, claim summaries, compliance documents, internal reports
 
-GET /api/demo - Run complete demonstration
+✔ Automated Data Analytics
 
-Use Cases
-Enterprise Document Analysis: Process contracts, reports, policies
+Query BigQuery datasets using natural language
 
-Data Analytics & Reporting: Query data warehouses & generate insights
+✔ Workflow Automation
 
-Workflow Automation: Multi-step business process automation
+Automate multi-step enterprise workflows
 
-Intelligent Q&A: Natural language queries with document context
+✔ Intelligent RAG-based Q&A
 
-Deployment
-Local Development
-bash
-python main.py
-Docker
+Ask questions using enterprise document context
 
-```bash
+🐳 Docker Deployment
 docker build -t enterprise-rag-hub .
 docker run -p 8080:8080 enterprise-rag-hub
-GCP Cloud Run
+
+☁ Deploy to Cloud Run
 chmod +x deployment/deploy.sh
 ./deployment/deploy.sh
-```
-Performance Metrics
 
-Processes complex multi-step workflows in seconds
+📈 Performance Highlights
 
-Reduces manual data processing time by 70%
+Executes multi-step enterprise workflows in seconds
 
-Handles document analysis and data queries simultaneously
+Reduces manual document/data processing by 70%
 
-Ready for production deployment on GCP Cloud Run
+Simultaneously handles BigQuery, Storage, and document Q&A
 
-Future Enhancements
-Additional MCP servers (Gmail, Slack, Jira)
+Fully compatible with Cloud Run and scalable under load
 
-Advanced RAG with vector databases
+🔮 Future Enhancements
 
-Real-time streaming capabilities
+Additional MCP servers (Gmail, Slack, Jira, ServiceNow)
 
-Enhanced security and authentication
+Vector database support for advanced RAG
 
-Kubernetes deployment configuration
+Real-time streaming with Pub/Sub
 
-Contributing
-This project demonstrates enterprise AI architecture patterns. Contributions and adaptations are welcome for learning and development purposes.
+Role-based authentication
+
+Kubernetes (GKE) deployment manifests
+
+🤝 Contributing
+
+This project demonstrates enterprise AI + workflow orchestration patterns.
+Contributions, forks, and enhancements are welcome for learning and real-world use.
