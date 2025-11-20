@@ -35,11 +35,13 @@ curl http://localhost:8080/status
 ```
 Architecture
 text
+```bash
 User Request → Flask API → Router Agent → MCP Servers → AI Processing
      ↓              ↓             ↓           ↓           ↓
   Web UI        Intent        BigQuery    RAG Agent   Structured
               Analysis        GCS Ops    Document     JSON Response
                                             Intelligence
+```
 Tech Stack
 
 Component	Technology	Purpose
